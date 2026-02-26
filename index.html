@@ -263,9 +263,15 @@
 
             <!-- Formulário Minimalista (Adaptado para Vercel via Formspree/Web3Forms) -->
             <div data-aos="fade-left" class="bg-gray-50 p-8 md:p-12 rounded-3xl">
-                <!-- ATENÇÃO: Substitua a URL do action pelo endpoint do Formspree ou Web3Forms -->
-                <form action="https://formspree.io/f/SEU_ID_AQUI" method="POST" class="space-y-8 font-sans">
+                <form action="https://api.web3forms.com/submit" method="POST" class="space-y-8 font-sans">
                     
+                    <!-- Configurações Web3Forms -->
+                    <input type="hidden" name="access_key" value="f750e123-2747-4df2-83bb-46a6f4aa5506">
+                    <input type="hidden" name="subject" value="Novo Lead Comercial - Infraweb Solutions">
+                    <input type="hidden" name="from_name" value="Sistema Infraweb">
+                    <!-- Proteção Anti-Spam (Honeypot) -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                     <div class="relative">
                         <input type="text" name="nome" id="nome" required class="block w-full border-0 border-b-2 border-gray-200 bg-transparent py-3 text-black focus:border-black focus:ring-0 text-lg transition-colors peer placeholder-transparent interactive" placeholder="Seu Nome">
                         <label for="nome" class="absolute left-0 -top-3.5 text-sm text-gray-500 transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-black">Nome Completo</label>
@@ -304,8 +310,8 @@
     <footer class="py-8 px-6 md:px-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 font-sans text-sm text-gray-500">
         <p>© 2026 Infraweb Solutions. Todos os direitos reservados.</p>
         <div class="flex gap-6">
-            <a href="#" class="hover:text-white transition-colors interactive">Instagram</a>
-            <a href="#" class="hover:text-white transition-colors interactive">LinkedIn</a>
+            <a href="https://www.instagram.com/guilhermesantiago96/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors interactive">Instagram</a>
+            <a href="https://www.linkedin.com/in/guilherme-santiago-239907116/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors interactive">LinkedIn</a>
         </div>
     </footer>
 
