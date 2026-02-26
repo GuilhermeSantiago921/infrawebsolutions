@@ -35,9 +35,6 @@
                             light: '#f5f5f5',
                             accent: '#2563eb', // Um azul corporativo moderno para detalhes sutis
                         }
-                    },
-                    cursor: {
-                        'none': 'none',
                     }
                 }
             }
@@ -51,31 +48,6 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* Ocultar cursor custom em touch devices */
-        @media (hover: none) {
-            #cursor { display: none !important; }
-            body { cursor: auto; }
-        }
-
-        /* Custom Cursor Minimalista */
-        #cursor {
-            width: 12px; height: 12px;
-            background: #ffffff;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
-            transform: translate(-50%, -50%);
-        }
-        
-        #cursor.hover-state {
-            transform: translate(-50%, -50%) scale(4);
-            background: rgba(255, 255, 255, 0.1);
-            border: 0.5px solid #fff;
         }
 
         /* Tipografia Oversized Ousada */
@@ -111,9 +83,6 @@
     </style>
 </head>
 <body class="selection:bg-white selection:text-black">
-
-    <!-- Custom Cursor -->
-    <div id="cursor" class="hidden md:block"></div>
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 top-0 backdrop-blur-md bg-brand-black/70 border-b border-white/5 px-6 md:px-12 py-5 flex justify-between items-center transition-all duration-300" id="navbar">
@@ -324,24 +293,6 @@
             once: true,
             offset: 100
         });
-
-        // Lógica do Custom Cursor Otimizada
-        const cursor = document.getElementById('cursor');
-        
-        if (window.matchMedia("(pointer: fine)").matches) {
-            document.addEventListener('mousemove', (e) => {
-                // Remove o delay para um cursor mais responsivo e clean
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
-
-            // Efeito em botões e links
-            const interactiveElements = document.querySelectorAll('.interactive, a, button, input, select');
-            interactiveElements.forEach(el => {
-                el.addEventListener('mouseenter', () => cursor.classList.add('hover-state'));
-                el.addEventListener('mouseleave', () => cursor.classList.remove('hover-state'));
-            });
-        }
 
         // Lógica do Menu Mobile Clean
         const menuBtn = document.getElementById('menu-btn');
