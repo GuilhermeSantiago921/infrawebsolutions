@@ -1,0 +1,15 @@
+Infraweb Solutions - Diretivas de Rastreio (Crawling)
+
+Otimizado para arquitetura Serverless/Estática
+
+User-agent: *
+Allow: /
+
+Bloquear ficheiros de sistema (caso sejam acidentalmente expostos nalguma build)
+
+Disallow: /.env
+Disallow: /.git/
+
+Apontador Estratégico para o Mapa do Site
+
+Sitemap: https://www.google.com/url?sa=E&source=gmail&q=https://infrawebsolutions.com.br/sitemap.xml
